@@ -277,11 +277,15 @@ FusionSentinel/
 │   ├── __init__.py
 │   ├── config_loader.py      # Configuration loader
 │   └── data_generator.py     # Synthetic data generator
+├── results/
+│   └── training_curves.png   # Training performance visualization
 ├── train.py                  # Main training script
 ├── evaluate.py               # Evaluation script
 ├── inference.py              # Inference script
+├── FusionSentinel_Colab.ipynb  # Google Colab notebook
 ├── config.yaml              # Configuration file
 ├── requirements.txt         # Dependencies
+├── .gitignore              # Git ignore rules
 ├── LICENSE                  # MIT License
 └── README.md               # This file
 ```
@@ -301,4 +305,8 @@ FusionSentinel/
 
 MIT License - see [LICENSE](LICENSE) for details.
 
+---
 
+<div align="center">
+  <strong>Made with ❤️ by Sarvagna</strong>
+</div>

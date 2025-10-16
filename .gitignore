@@ -39,6 +39,8 @@ data/processed/
 *.parquet
 
 # Models
+*.pth
+*.pt
 models/*.pth
 models/*.pt
 checkpoints/
