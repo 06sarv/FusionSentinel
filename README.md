@@ -262,9 +262,4 @@ FusionSentinel/
 
 MIT License - see [LICENSE](LICENSE) for details.
 
----
 
-## Contact
-
-**Sarvagna** - [@06sarv](https://github.com/06sarv)  
-Project: [https://github.com/06sarv/FusionSentinel](https://github.com/06sarv/FusionSentinel)
