@@ -1,0 +1,83 @@
+# FusionSentinel Configuration
+
+# Data paths
+data:
+  network_path: "data/raw/cicids2017/"
+  syscall_path: "data/raw/adfa_ld/"
+  telemetry_path: "data/raw/telemetry/"
+  processed_path: "data/processed/"
+
+# Model architecture
+model:
+  # Network CNN
+  network_input_dim: 78  # CICIDS2017 features
+  cnn_channels: [64, 128, 256]
+  cnn_kernel_size: 3
+  
+  # System Call Transformer
+  syscall_vocab_size: 500
+  syscall_embed_dim: 256
+  transformer_heads: 8
+  transformer_layers: 4
+  transformer_dropout: 0.1
+  
+  # Process Telemetry MLP
+  telemetry_input_dim: 20
+  mlp_hidden_dims: [128, 256]
+  
+  # Cross-Modal Attention
+  attention_dim: 256
+  attention_heads: 8
+  
+  # BiLSTM Fusion
+  lstm_hidden_dim: 256
+  lstm_layers: 2
+  lstm_dropout: 0.2
+  
+  # Classifier
+  num_classes: 10  # Normal + 9 attack types
+  classifier_hidden: 512
+
+# Training
+training:
+  batch_size: 64
+  epochs: 100
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  
+  # Scheduler
+  scheduler: "cosine"
+  t_0: 10
+  t_mult: 2
+  
+  # Early stopping
+  patience: 15
+  min_delta: 0.001
+  
+  # Device
+  device: "cuda"  # or "cpu"
+  num_workers: 4
+  
+  # Checkpoints
+  checkpoint_dir: "checkpoints/"
+  save_best_only: true
+
+# Evaluation
+evaluation:
+  test_batch_size: 128
+  metrics: ["accuracy", "precision", "recall", "f1"]
+  confusion_matrix: true
+  attention_visualization: true
+
+# Attack types
+attack_types:
+  - "Normal"
+  - "DoS"
+  - "DDoS"
+  - "PortScan"
+  - "BruteForce"
+  - "WebAttack"
+  - "Infiltration"
+  - "Botnet"
+  - "Heartbleed"
+  - "Backdoor"
