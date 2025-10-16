@@ -50,7 +50,8 @@ runs/
 
 # Jupyter
 .ipynb_checkpoints/
-*.ipynb
+# Allow Colab notebook
+# *.ipynb
 
 # OS
 .DS_Store

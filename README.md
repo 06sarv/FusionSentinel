@@ -1,5 +1,7 @@
 # FusionSentinel: Multi-Modal Cyber Threat Detection
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/06sarv/FusionSentinel/blob/main/FusionSentinel_Colab.ipynb)
+
 A deep learning system for detecting and classifying cyber threats by fusing network traffic, system calls, and host telemetry data. This project implements a hybrid CNN-Transformer-BiLSTM architecture with cross-modal attention for advanced threat detection.
 
 ## Project Overview
@@ -185,12 +187,24 @@ def forward(self, network, syscall, telemetry, syscall_mask):
 
 ## Quick Start
 
-### Prerequisites
+### Option 1: Google Colab (Recommended - GPU Accelerated)
+
+**Fastest way to train with free GPU (30-60 minutes vs 8-9 hours on CPU)**
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/06sarv/FusionSentinel/blob/main/FusionSentinel_Colab.ipynb)
+
+1. Click the badge above
+2. Enable GPU: `Runtime` → `Change runtime type` → `T4 GPU`
+3. Run all cells
+
+### Option 2: Local Training
+
+**Prerequisites:**
 ```bash
 pip install -r requirements.txt
 ```
 
-### Setup and Execution
+**Setup and Execution:**
 
 **1. Generate Synthetic Data:**
 ```bash
@@ -199,7 +213,7 @@ python train.py --generate-data --num-samples 10000
 
 **2. Train Model:**
 ```bash
-python train.py
+python train.py  # CPU: 8-9 hours, GPU: 30-60 minutes
 ```
 
 **3. Evaluate:**
