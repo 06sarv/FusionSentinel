@@ -55,7 +55,7 @@ training:
   min_delta: 0.001
   
   # Device
-  device: "cuda"  # or "cpu"
+  device: "cpu"  # or "cuda"
   num_workers: 4
   
   # Checkpoints

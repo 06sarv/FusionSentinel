@@ -34,15 +34,11 @@ class NetworkCNN(nn.Module):
     def forward(self, x):
         """
         Args:
-            x: (batch, seq_len, input_dim) - network flow features
+            x: (batch, input_dim) - network flow features
         Returns:
             (batch, seq_len', output_dim) - extracted features
         """
-        # Reshape for 1D CNN: (batch, channels=1, features)
-        x = x.unsqueeze(1)  # (batch, 1, seq_len, input_dim)
-        x = x.squeeze(-1) if x.dim() == 4 else x
-        
-        # If input is 2D (batch, features), add sequence dimension
+        # Reshape for 1D CNN: (batch, 1, features)
         if x.dim() == 2:
             x = x.unsqueeze(1)  # (batch, 1, features)
         

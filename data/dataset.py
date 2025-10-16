@@ -34,10 +34,6 @@ class MultiModalDataset(Dataset):
             self.labels = torch.LongTensor(labels)
         else:
             self.labels = None
-        
-        # Ensure network data has sequence dimension for CNN
-        if self.network_data.dim() == 2:
-            self.network_data = self.network_data.unsqueeze(1)  # (N, 1, features)
     
     def __len__(self) -> int:
         return len(self.network_data)

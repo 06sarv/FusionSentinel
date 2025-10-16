@@ -2,7 +2,7 @@
 Data processing and loading modules
 """
 
-from .dataset import MultiModalDataset
+from .dataset import MultiModalDataset, create_dataloaders
 from .preprocessing import (
     NetworkPreprocessor,
     SyscallPreprocessor,
@@ -12,6 +12,7 @@ from .preprocessing import (
 
 __all__ = [
     'MultiModalDataset',
+    'create_dataloaders',
     'NetworkPreprocessor',
     'SyscallPreprocessor',
     'TelemetryPreprocessor',
